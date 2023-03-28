@@ -69,8 +69,10 @@ class Matcher:
                     last_rule = self.rules[-1][0]  # get last rule function
                     self._rules = self.rules[:-1]  # remove last rule
 
-                    self._rules.append((last_rule, length))
-                    self.state_1_buffer = ""
+                    self._rules.append((last_rule, length))  # push modified rule
+
+                    self.state_1_buffer = ""  # clear buffer
+
                     self.state = 0
 
                 else:
